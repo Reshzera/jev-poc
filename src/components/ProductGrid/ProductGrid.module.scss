@@ -1,0 +1,14 @@
+@use 'variables' as v;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: v.$space * 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.empty {
+  color: v.$color-muted;
+}

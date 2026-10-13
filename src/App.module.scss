@@ -1,0 +1,182 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.page {
+  max-width: v.$content-width;
+  margin: 0 auto;
+  padding: v.$space * 5 v.$space * 3;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: v.$space * 2;
+  padding-bottom: v.$space * 2;
+  margin-bottom: v.$space * 4;
+  border-bottom: 1px solid v.$color-border;
+
+  @include m.below(v.$breakpoint-sm) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.brand {
+  color: v.$color-accent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.count {
+  color: v.$color-muted;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.intent {
+  @include m.surface;
+
+  display: flex;
+  flex-direction: column;
+  gap: v.$space * 1.5;
+  padding: v.$space * 2.5;
+  margin-bottom: v.$space * 4;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  gap: v.$space * 1.5;
+
+  @include m.below(v.$breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: v.$space * 1.25 v.$space * 1.5;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius * 0.8;
+  background: v.$color-bg;
+  color: v.$color-text;
+  font: inherit;
+  font-size: 0.95rem;
+
+  &::placeholder {
+    color: v.$color-muted;
+  }
+
+  &:focus-visible {
+    border-color: v.$color-accent;
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.submit {
+  padding: v.$space * 1.25 v.$space * 2.5;
+  border: 1px solid transparent;
+  border-radius: v.$radius * 0.8;
+  background: v.$color-accent;
+  color: #0b0d12;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    filter 150ms ease,
+    opacity 150ms ease;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+}
+
+.cost {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$space * 3;
+  margin: 0;
+  padding: v.$space * 1.5 0 0;
+  border-top: 1px solid v.$color-border;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span {
+    color: v.$color-muted;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.costValue {
+  color: v.$color-accent;
+}
+
+.note {
+  color: v.$color-muted;
+  font-size: 0.8rem;
+
+  code {
+    padding: 1px 4px;
+    border-radius: 4px;
+    background: rgba(v.$color-accent, 0.12);
+    font-size: 0.78rem;
+  }
+}
+
+.error {
+  padding: v.$space v.$space * 1.5;
+  border: 1px solid rgba(#ff6b6b, 0.4);
+  border-radius: v.$radius * 0.8;
+  background: rgba(#ff6b6b, 0.08);
+  color: #ff8787;
+  font-size: 0.85rem;
+}
+
+.resultLine {
+  margin-bottom: v.$space * 2;
+  color: v.$color-success;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: v.$space * 5;
+  padding-top: v.$space * 2;
+  border-top: 1px solid v.$color-border;
+  color: v.$color-muted;
+  font-size: 0.8rem;
+}

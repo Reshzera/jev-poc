@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+@mixin surface {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius;
+}
+
+@mixin below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

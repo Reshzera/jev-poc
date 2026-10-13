@@ -1,0 +1,93 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.card {
+  @include m.surface;
+
+  display: flex;
+  flex-direction: column;
+  gap: v.$space * 0.5;
+  height: 100%;
+  padding: v.$space * 2;
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease;
+
+  &:hover {
+    border-color: v.$color-accent;
+    transform: translateY(-2px);
+  }
+}
+
+.thumb {
+  display: grid;
+  place-items: center;
+  height: 96px;
+  margin-bottom: v.$space;
+  border-radius: v.$radius * 0.6;
+  background: rgba(v.$color-accent, 0.08);
+  font-size: 2.5rem;
+}
+
+.suggested {
+  border-color: v.$color-success;
+  box-shadow: 0 0 0 1px rgba(v.$color-success, 0.45);
+
+  &:hover {
+    border-color: v.$color-success;
+  }
+
+  .thumb {
+    background: rgba(v.$color-success, 0.1);
+  }
+}
+
+.relevance {
+  color: v.$color-success;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.category {
+  color: v.$color-muted;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.meta {
+  color: v.$color-muted;
+  font-size: 0.8rem;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: v.$space;
+  margin-top: auto;
+  padding-top: v.$space * 1.5;
+}
+
+.price {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.badge {
+  padding: 2px v.$space;
+  border: 1px solid rgba(#ff6b6b, 0.4);
+  border-radius: 999px;
+  color: #ff8787;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
