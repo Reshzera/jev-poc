@@ -1,5 +1,19 @@
 # jev-poc
 
+
+### Demo
+
+
+
+https://github.com/user-attachments/assets/5e0855ae-55d6-4f59-aecd-e0b6de9931eb
+
+
+
+
+
+
+
+
 Catálogo de uma drogaria brasileira — single-page app em React + TypeScript,
 Vite e SCSS modules.
 
